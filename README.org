@@ -1,0 +1,18 @@
+*#+TITLE:   templsub
+#+DATE:    November 30, 2020
+#+STARTUP: inlineimages nofold
+
+* Table of Contents :TOC_3:noexport:
+- [[#description][Description]]
+  - [[#maintainers][Maintainers]]
+
+* Description
+# A summary of what this module does.
+
+Take template directory and make a number of similar directories where some text
+files have had text substituted.
+
+More documentation needed...
+
+** Maintainers
++ @jrbp (Author)

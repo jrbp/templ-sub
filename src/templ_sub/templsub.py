@@ -22,6 +22,17 @@ def sub_file(tfile, subs):
         file_string = re.sub('\!SUB{}SUB\!'.format(key), str(val), file_string)
     return file_string
 
+def get_sub_set_from_templ(tdir):
+    """ return a set of substitution keys in template directory tdir
+        note: this will not find substitution keys with whitespace in them """
+    subs = []
+    for tfile in ts.get_templ_files(tdir):
+        with open(os.path.join(tdir, tfile)) as f:
+            file_string = f.read()
+        matches= re.findall('\!SUB(\S*)SUB\!', file_string)
+        subs.extend(matches)
+    return set(subs)
+
 def replace_all_subs(tdir, ddir, c_subs, o_subs, prefix=None):
     """
     created new files in ddir from those in tdir with specified substitutions

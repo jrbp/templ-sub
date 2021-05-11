@@ -26,7 +26,7 @@ def get_sub_set_from_templ(tdir):
     """ return a set of substitution keys in template directory tdir
         note: this will not find substitution keys with whitespace in them """
     subs = []
-    for tfile in ts.get_templ_files(tdir):
+    for tfile in get_templ_files(tdir):
         with open(os.path.join(tdir, tfile)) as f:
             file_string = f.read()
         matches= re.findall('\!SUB(\S*)SUB\!', file_string)

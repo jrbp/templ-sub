@@ -6,6 +6,8 @@ import re
 from glob import iglob
 from copy import deepcopy
 
+# TODO: use bracketes '{var}' so that we can just use string.format instead of weird regex things
+
 def get_templ_files(tdir, ignore=None):
     """ obtain list of files in tdir (including those inside other directories) """
     templ_files = []
@@ -66,6 +68,7 @@ def replace_all_subs(tdir, ddir, c_subs, o_subs, prefix=None):
     return
 
 if __name__ == '__main__':
+    import json
     tdir = sys.argv[1]
     ddir = sys.argv[2]
     common_subs = json.load(sys.argv[3])
